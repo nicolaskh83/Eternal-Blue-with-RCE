@@ -1,6 +1,6 @@
 # MS17-010 Exploit Code
 
-This is some  public exploit code that generates valid shellcode for the eternal blue exploit that instructs the victim using Certutil tool to download an implant from an internet AWS server and execute it.
+This is a  public exploit code that generates valid shellcode for the eternal blue exploit that instructs the victim using Certutil tool to download an implant from an internet AWS server and execute it.
 
 This version of the exploit is prepared in a way where you can exploit eternal blue WITHOUT metasploit, or reverse shells (no need to use ncat listenning)
 
