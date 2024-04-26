@@ -1,3 +1,4 @@
+#this is not used
 #!/bin/bash
 set -e
 cat << "EOF"
