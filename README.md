@@ -47,7 +47,7 @@ OUTPUT:
           '-..-'|_.-''-._|   
 Eternal Blue Windows Shellcode Compiler
 
-Let's compile them windoos shellcodezzz
+Let's compile the Shellcode
 
 Compiling x64 kernel shellcode
 'Compiling x86 kernel shellcode'
