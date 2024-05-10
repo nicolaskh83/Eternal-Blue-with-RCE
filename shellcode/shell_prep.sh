@@ -18,7 +18,7 @@ cat << "EOF"
 EOF
 echo "Eternal Blue Windows Shellcode Compiler"
 echo
-echo "Let's compile them windoos shellcodezzz"
+echo "Let's compile them windoos shellcode"
 echo
 # Compile the x64 kernel shellcode using NASM (Netwide Assembler).
 echo "Compiling x64 kernel shellcode"
